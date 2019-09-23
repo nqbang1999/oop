@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let Temperature= function (do_c) {
+        this.do_C= do_c;
+        this.convertToF= function () {
+            return (this.do_C* 1.8) + 32;
+        };
+        this.convertToK= function () {
+            return this.do_C+ 273.15;
+        }
+    };
+
+    let temperature= new Temperature(25);
+    console.log(temperature.convertToF());
+    console.log(temperature.convertToK());
+
+
+</script>
+
+</body>
+</html>

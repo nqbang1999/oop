@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="300" height="150" style="border:1px solid #d3d3d3;">
+<script>
+    let Rectangle= function (height, width) {
+        this.height= height;
+        this.width= width;
+        this.calSquare= function () {
+            return this.height* this.width;
+        };
+        this.calDiameter= function () {
+            return 2* this.height* this.width;
+        };
+        this.drawRectangle= function () {
+            let c= document.getElementById('myCanvas');
+            let ctx= c.getContext('2d');
+            ctx.rect(20, 20, this.height, this.width );
+            ctx.stroke();
+        }
+    };
+
+    let rectangle= new Rectangle(90, 50);
+    rectangle.drawRectangle();
+    rectangle.height= 45;
+    rectangle.width= 25;
+    rectangle.drawRectangle();
+
+</script>
+
+</body>
+</html>

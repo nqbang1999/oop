@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<input type="text" id="txtSendMessArea" >
+<body>
+<script>
+    let Mobile= function (battery, memoryIbox, memorySent, status) {
+        this.battery = battery;
+        this.memoryIbox = memoryIbox;
+        this.memorySent = memorySent;
+        this.in0n = status;
+        this.checkStatus = function () {
+            if( this.in0n ) {
+                console.log(this.in0n);
+                this.battery = this.battery - 1;
+            }};
+            this.onOff = function (mobile) {
+                if (this.in0n) {
+                    this.in0n = false;
+                    this.battery = this.battery - 1;
+                } else {
+                    this.in0n = true;
+                    this.battery = this.battery - 1;
+                }
+            };
+            this.chargePhone = function (mobile) {
+                if (this.in0n) {
+                    if (this.battery < 100) {
+                        this.battery = this.battery + 1;
+                    }
+                }
+            };
+            this.sendMess = function (otherMobile) {
+                if (this.in0n) {
+                    let mess = prompt('type smth...');
+                    this.memorySent.push(mess);
+                    otherMobile.memoryIbox.push(mess);
+                    this.battery= this.battery- 1;
+                }
+            };
+            this.viewIbox = function (mobile) {
+                if (this.in0n) {
+                    console.log(this.memoryIbox);
+                    this.battery = this.battery - 1;
+                }
+            };
+            this.viewSentMess = function (mobile) {
+                if (this.in0n) {
+                    console.log(this.memorySent);
+                    this.battery = this.battery - 1;
+                }
+            }
+        };
+        let nokiaIbox = [];
+        let nokiaSentMess = [];
+        let iphoneIbox = [];
+        let iphoneSentMess = [];
+
+        let nokia = new Mobile(100, nokiaIbox, nokiaSentMess, false);
+        let iphone = new Mobile(100, iphoneIbox, iphoneSentMess, false);
+
+
+
+</script>
+
+</body>
+</html>

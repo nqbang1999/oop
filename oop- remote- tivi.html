@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let Remote= function (code) {
+        this.type= code;
+        this.switchChannel= function (tivi) {
+            let inputChannel= parseInt(prompt('which channels you want to switch to: '));
+            tivi.channel= inputChannel;
+        };
+        this.changeVolume= function (tivi) {
+            let inputVol= parseInt(prompt('which volume you want: '));
+            tivi.volume= inputVol;
+        }
+    };
+
+    let Tivi= function (channel, volume, status) {
+        this.channel= channel;
+        this.volume= volume;
+        this.isOn= status;
+        this.switchChannel= function () {
+            if( this.isOn ){
+            let inputChannel= parseInt(prompt('which channels you want to switch to: '));
+            this.channel= inputChannel;}
+            else { console.log('pls turn on TV !'); }
+        };
+        this.changeVolume= function () {
+            if( this.isOn ){
+            let inputVol= parseInt(prompt('which volume you want: '));
+            this.volume= inputVol;
+        } else {
+                console.log('pls turn on TV');
+            }}};
+
+    let remote= new Remote('Sony-Bravia');
+    let tivi= new Tivi(1, 1, true);
+
+
+</script>
+
+</body>
+</html>

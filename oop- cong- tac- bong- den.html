@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let SwitchButton= function (status, lamp) {
+        this.inOn= status;
+        this.lamp= lamp;
+        this.onOff= function () {
+            if( this.inOn ){
+                this.inOn= false;
+            } else {
+                this.inOn= true;
+            }
+        };
+        this.turnOnLamp= function (lamp) {
+            if( this.inOn ){
+                if( lamp.inOn ){
+                lamp.inOn= false;
+            }else {
+                lamp.inOn= true;
+                }
+        } else { console.log('being off, please turn on to use'); }
+    }};
+
+    let ElectricLamp= function (status) {
+        this.inOn= status;
+        this.onOff= function () {
+            if( this.inOn ){
+                this.inOn= false;
+            } else {
+                this.inOn= true;
+            }
+        }
+    };
+
+    let switchButton= new SwitchButton(false, 'thong nhat"s Fan');
+    let electricLamp = new ElectricLamp(false);
+
+</script>
+
+</body>
+</html>

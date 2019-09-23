@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let Apple= function (weight) {
+        this.weight= weight;
+    };
+
+    let Human= function (name, gender, weight) {
+        this.name= name;
+        this.gender= gender;
+        this.weight= weight;
+        this.speak= function () {
+            let speech= prompt('say smth ');
+            console.log(speech);
+        };
+        this.eatApple= function (apple) {
+            if( apple.weight> 0 ){
+            this.weight= this.weight+ 1;
+            apple.weight= apple.weight- 1;
+        }else {
+                console.log("out of apple ~~, eat too much, there's nothing left");
+            }
+        };
+        this.checkWeightApple= function (apple) {
+            console.log(apple.weight);
+        };
+        this.checkOther= function (otherPerson) {
+            console.log(otherPerson);
+        }
+    };
+
+    let Adam= new Human('Adam', 'male', 60);
+    let Eva= new Human( 'Eva', 'female', 50 );
+    let apple= new Apple(10);
+
+
+
+
+
+</script>
+
+</body>
+</html>
